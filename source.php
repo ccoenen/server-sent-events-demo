@@ -20,8 +20,9 @@ function sendMsg($msg) {
 }
 
 
-for ($i = 0; $i < 100; $i++) {
+while (!connection_aborted()) {
 	$count++;
 	sendMsg('server time: ' . date("H:i:s"));
-	usleep(10000); // 10ms per message -> 100msg/s
+	usleep(16000); // 16ms per message -> 60msg/s
 }
+error_log("connection closed");

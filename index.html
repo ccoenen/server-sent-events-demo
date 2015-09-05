@@ -1,14 +1,14 @@
 <html>
 <body>
-	<p>test</p>
+	<p id="output">nothing received so far</p>
 	<script>
+	var outputElement = document.getElementById('output');
 	var source = new EventSource('http://localhost:8001/source.php');
-	source.addEventListener('message', function(e) {
-		document.write('<p>' + e.data + '</p>');
-	}, false);
+	var eventCounter = 0;
 
 	source.addEventListener('testeventcc', function(e) {
-		document.write('<p>testevent: ' + e.data + '</p>');
+		eventCounter++;
+		outputElement.innerText = e.data + " (" + eventCounter + " Events)";
 	}, false);
 
 	source.addEventListener('open', function(e) {
