@@ -2,7 +2,7 @@
 <body>
 	<p>test</p>
 	<script>
-	var source = new EventSource('/source.php');
+	var source = new EventSource('http://localhost:8001/source.php');
 	source.addEventListener('message', function(e) {
 		document.write('<p>' + e.data + '</p>');
 	}, false);

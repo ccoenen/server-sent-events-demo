@@ -1,6 +1,7 @@
 <?php
 error_log('script starting');
 header('Content-Type: text/event-stream');
+header('Access-Control-Allow-Origin: *');
 header('Cache-Control: no-cache');
 
 echo "retry: 3000\n";
