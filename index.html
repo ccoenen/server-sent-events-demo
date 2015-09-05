@@ -1,0 +1,25 @@
+<html>
+<body>
+	<p>test</p>
+	<script>
+	var source = new EventSource('/source.php');
+	source.addEventListener('message', function(e) {
+		document.write('<p>' + e.data + '</p>');
+	}, false);
+
+	source.addEventListener('testeventcc', function(e) {
+		document.write('<p>testevent: ' + e.data + '</p>');
+	}, false);
+
+	source.addEventListener('open', function(e) {
+		console.log("connected");
+	}, false);
+
+	source.addEventListener('error', function(e) {
+		console.error(e);
+		if (e.readyState == EventSource.CLOSED) {
+		}
+	}, false);
+	</script>
+</body>
+</html>
