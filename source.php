@@ -1,4 +1,12 @@
 <?php
+/*
+ Server-Sent Events / EventSource DEMO
+ Claudius Coenen
+
+ This is free software. Use, modify and tinker with it however you like!
+ LICENSED UNDER CC-BY-4.0 http://creativecommons.org/licenses/by/4.0/
+ */
+
 error_log('script starting');
 header('Content-Type: text/event-stream');
 header('Access-Control-Allow-Origin: *');

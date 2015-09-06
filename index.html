@@ -1,5 +1,12 @@
 <html>
 <head>
+<!--
+ Server-Sent Events / EventSource DEMO
+ Claudius Coenen
+
+ This is free software. Use, modify and tinker with it however you like!
+ LICENSED UNDER CC-BY-4.0 http://creativecommons.org/licenses/by/4.0/
+-->
 <style>
 	body {
 		font-size: 3em;
@@ -10,9 +17,13 @@
 <body>
 	<p id="output">nothing received so far</p>
 	<script>
-	var outputElement = document.getElementById('output');
-	// change this line to match the IP address of your Arduino!
+	// change this line to match the IP address of your Arduino
 	var source = new EventSource('http://192.168.1.42:80/');
+	// or, in case you're using the PHP Script, use this line instead.
+	// var source = new EventSource('source.php');
+
+
+	var outputElement = document.getElementById('output');
 	var eventCounter = 0;
 
 	source.addEventListener('testeventcc', function(e) {
