@@ -20,7 +20,7 @@ $count = 0;
 
 function sendMsg($msg) {
 	global $count, $seed;
-	error_log('messaege sent: ' . $msg);
+	error_log('message sent: ' . $msg);
 	echo "event: testeventcc\n";
 	echo "data: $msg $count $seed\n\n";
 	ob_flush();
